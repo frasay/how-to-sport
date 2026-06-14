@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="How to Sport - Learn any sport at any level. One app. Every sport. Every level. Made in Aotearoa." name="description"/>
+<meta content="How to Sport - 50 Sports Guide" property="og:title"/>
+<meta content="Learn the rules, positions, and winning strategies for 50 popular sports" property="og:description"/>
+<meta content="https://cdn.simtheory.ai/image/upload/v1781399799/user_3240/how-to-sport.png?w=1200&amp;h=630" property="og:image"/>
+<meta content="website" property="og:type"/>
+<title>How to Sport - 50 Sports Guide</title>
+<script src="assets/script_c7b3ae04.js"></script>
+<link href="assets/style_877b3277.css" rel="stylesheet"/>
+<link href="assets/style_5d62b215.css" rel="stylesheet"/>
+<script crossorigin="" src="assets/script_5a36826e.js"></script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Playfair+Display:wght@700;800&display=swap');
+        
+        * {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        h1, h2, h3, .heading {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #0f766e 0%, #164e63 50%, #7c2d12 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .sport-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 28px;
+        }
+        
+        .badge-teal {
+            background: #0f766e;
+            color: white;
+        }
+        
+        .badge-orange {
+            background: #ea580c;
+            color: white;
+        }
+        
+        .badge-purple {
+            background: #6b21a8;
+            color: white;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #0f766e 0%, #ea580c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 50;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-overlay.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 40px;
+            animation: slideUp 0.3s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .sport-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        
+        @media (max-width: 768px) {
+            .sport-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 16px;
+            }
+            
+            .modal-content {
+                padding: 24px;
+            }
+        }
+        
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+        
+        .pulse-ring {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+    </style>
+<script>
+                window.load_data_from_csv = (filename) => {
+                    // Implementation needed when code is downloaded
+                };
+
+                window.save_data_to_csv = (filename, data) => {
+                    // Implementation needed when code is downloaded
+                };
+
+                window.call_llm = (system_prompt, user_messages, json_fields) => {
+                    // Implementation needed when code is downloaded
+                };
+            </script></head>
+<body class="bg-white scroll-smooth">
+<!-- Navigation -->
+<nav class="sticky top-0 z-40 bg-white shadow-md">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-gradient-to-br from-teal-600 to-orange-600 rounded-lg flex items-center justify-center">
+<i class="fas fa-trophy text-white text-lg"></i>
+</div>
+<h1 class="text-2xl font-bold text-gradient">How to Sport</h1>
+</div>
+<div class="hidden md:flex gap-6">
+<a class="text-gray-700 hover:text-teal-600 font-medium transition" href="#sports">Sports</a>
+<a class="text-gray-700 hover:text-teal-600 font-medium transition" href="#about">About</a>
+<a class="text-gray-700 hover:text-teal-600 font-medium transition" href="#download">Download</a>
+</div>
+<button class="md:hidden text-gray-700 text-2xl" id="menuToggle">
+<i class="fas fa-bars"></i>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="hero-gradient text-white py-20 md:py-32">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div class="animate__animated animate__fadeInLeft">
+<h2 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                        Know More.<br/>Enjoy More.
+                    </h2>
+<p class="text-xl text-gray-100 mb-8 leading-relaxed">
+                        Confused about the rules? Not sure what just happened? How to Sport explains any sport at any level. One app. Every sport. Every level.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition transform hover:scale-105" onclick="document.getElementById('sports').scrollIntoView({behavior: 'smooth'})">
+                            Explore Sports
+                        </button>
+<button class="bg-white text-teal-600 hover:bg-gray-100 px-8 py-4 rounded-xl font-bold text-lg transition transform hover:scale-105" id="downloadBtn">
+                            Download App
+                        </button>
+</div>
+</div>
+<div class="animate__animated animate__fadeInRight">
+<img alt="How to Sport Hero" class="w-full rounded-2xl shadow-2xl" src="https://cdn.simtheory.ai/image/upload/v1781399799/user_3240/how-to-sport.png"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="bg-gradient-to-r from-gray-50 to-white py-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+<div>
+<div class="text-4xl md:text-5xl font-bold text-teal-600 mb-2">50</div>
+<p class="text-gray-600 font-medium">Sports Covered</p>
+</div>
+<div>
+<div class="text-4xl md:text-5xl font-bold text-orange-600 mb-2">∞</div>
+<p class="text-gray-600 font-medium">Skill Levels</p>
+</div>
+<div>
+<div class="text-4xl md:text-5xl font-bold text-purple-600 mb-2">100%</div>
+<p class="text-gray-600 font-medium">Free Access</p>
+</div>
+<div>
+<div class="text-4xl md:text-5xl font-bold text-pink-600 mb-2">24/7</div>
+<p class="text-gray-600 font-medium">Always Available</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Filter Section -->
+<section class="py-12 bg-white border-b border-gray-200">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+<h3 class="text-2xl font-bold text-gray-800">Browse All Sports</h3>
+<div class="flex flex-wrap gap-2">
+<button class="filter-btn badge-teal px-6 py-2 rounded-full font-medium text-white cursor-pointer transition hover:opacity-90" data-filter="all" onclick="filterSports('all')">
+                        All Sports
+                    </button>
+<button class="filter-btn badge-orange px-6 py-2 rounded-full font-medium text-white cursor-pointer transition hover:opacity-90" data-filter="team" onclick="filterSports('team')">
+                        Team Sports
+                    </button>
+<button class="filter-btn badge-purple px-6 py-2 rounded-full font-medium text-white cursor-pointer transition hover:opacity-90" data-filter="individual" onclick="filterSports('individual')">
+                        Individual Sports
+                    </button>
+</div>
+</div>
+<div class="mt-6">
+<input class="w-full px-6 py-3 border-2 border-gray-300 rounded-xl focus:border-teal-600 focus:outline-none transition" id="searchInput" placeholder="Search sports..." type="text"/>
+</div>
+</div>
+</section>
+<!-- Sports Grid -->
+<section class="py-20 bg-white" id="sports">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="sport-grid" id="sportsGrid">
+<!-- Sports will be populated here -->
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-20 bg-gradient-to-br from-gray-50 to-white" id="about">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<img alt="About How to Sport" class="w-full rounded-2xl shadow-lg" src="https://cdn.simtheory.ai/image/upload/v1781399800/user_3240/tv-phone-questions.png"/>
+<div>
+<h2 class="text-4xl font-bold mb-6 text-gray-800">Why How to Sport?</h2>
+<p class="text-lg text-gray-600 mb-4 leading-relaxed">
+                        Ever been confused watching a sport? Missed a crucial moment and didn't understand what just happened? You're not alone.
+                    </p>
+<p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        How to Sport is designed to help fans at every level understand the rules, positions, and winning strategies for 50 popular sports. Whether you're a casual viewer or a dedicated fan, we've got you covered.
+                    </p>
+<ul class="space-y-4">
+<li class="flex items-center gap-3">
+<i class="fas fa-check-circle text-teal-600 text-xl"></i>
+<span class="text-gray-700">Clear, simple explanations</span>
+</li>
+<li class="flex items-center gap-3">
+<i class="fas fa-check-circle text-teal-600 text-xl"></i>
+<span class="text-gray-700">Team positions and roles</span>
+</li>
+<li class="flex items-center gap-3">
+<i class="fas fa-check-circle text-teal-600 text-xl"></i>
+<span class="text-gray-700">Winning strategies explained</span>
+</li>
+<li class="flex items-center gap-3">
+<i class="fas fa-check-circle text-teal-600 text-xl"></i>
+<span class="text-gray-700">Available 24/7, completely free</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Download Section -->
+<section class="py-20 hero-gradient text-white" id="download">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Learn?</h2>
+<p class="text-xl text-gray-100 mb-12 max-w-2xl mx-auto">
+                Download How to Sport today and never be confused about a sport again.
+            </p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center">
+<button class="bg-white text-teal-600 hover:bg-gray-100 px-8 py-4 rounded-xl font-bold text-lg transition transform hover:scale-105 flex items-center justify-center gap-2">
+<i class="fab fa-apple"></i> App Store
+                </button>
+<button class="bg-white text-teal-600 hover:bg-gray-100 px-8 py-4 rounded-xl font-bold text-lg transition transform hover:scale-105 flex items-center justify-center gap-2">
+<i class="fab fa-google-play"></i> Google Play
+                </button>
+</div>
+<p class="text-gray-200 mt-8 text-sm">Made in Aotearoa 🇳🇿</p>
+</div>
+</section>
+<!-- Sport Detail Modal -->
+<div class="modal-overlay" id="sportModal">
+<div class="modal-content">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h2 class="text-4xl font-bold text-gray-800 mb-2" id="modalTitle"></h2>
+<p class="text-gray-600 font-medium" id="modalType"></p>
+</div>
+<button class="text-gray-500 hover:text-gray-700 text-2xl" onclick="closeSportModal()">
+<i class="fas fa-times"></i>
+</button>
+</div>
+<div class="grid md:grid-cols-2 gap-8 mb-8">
+<div>
+<h3 class="text-2xl font-bold text-gray-800 mb-4">How to Win</h3>
+<ul class="space-y-3 text-gray-700" id="modalWinning">
+<!-- Content populated by JS -->
+</ul>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-gray-800 mb-4">Team Positions</h3>
+<ul class="space-y-3 text-gray-700" id="modalPositions">
+<!-- Content populated by JS -->
+</ul>
+</div>
+</div>
+<button class="w-full bg-teal-600 hover:bg-teal-700 text-white py-3 rounded-xl font-bold transition" onclick="closeSportModal()">
+                Close
+            </button>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid md:grid-cols-4 gap-8 mb-8">
+<div>
+<h4 class="font-bold mb-4">How to Sport</h4>
+<p class="text-gray-400 text-sm">Learn any sport at any level.</p>
+</div>
+<div>
+<h4 class="font-bold mb-4">Quick Links</h4>
+<ul class="space-y-2 text-sm text-gray-400">
+<li><a class="hover:text-white transition" href="#sports">Sports</a></li>
+<li><a class="hover:text-white transition" href="#about">About</a></li>
+<li><a class="hover:text-white transition" href="#download">Download</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">Follow Us</h4>
+<div class="flex gap-4">
+<a class="text-gray-400 hover:text-white transition" href="#"><i class="fab fa-instagram"></i></a>
+<a class="text-gray-400 hover:text-white transition" href="#"><i class="fab fa-twitter"></i></a>
+<a class="text-gray-400 hover:text-white transition" href="#"><i class="fab fa-facebook"></i></a>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-4">Contact</h4>
+<p class="text-gray-400 text-sm">hello@howtosport.com</p>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+<p>© 2024 How to Sport. All rights reserved. Made in Aotearoa 🇳🇿</p>
+</div>
+</div>
+</footer>
+<script>
+        // Complete sports database with all 50 sports
+        const sportsData = [
+            {
+                id: 1,
+                name: "Football (Soccer)",
+                type: "team",
+                icon: "⚽",
+                winning: [
+                    "Get the ball into the opponent's goal more times than they score",
+                    "Control possession and pass accurately to maintain attacking opportunities",
+                    "Defend as a team to prevent the opposition from creating clear chances",
+                    "Use width and movement to stretch the defence and create space",
+                    "Score from set pieces (corners, free kicks) when the defence is organized"
+                ],
+                positions: [
+                    "Goalkeeper: Protects the goal, catches and punches the ball away",
+                    "Defenders: Prevent opponents from scoring, clear the ball from danger",
+                    "Midfielders: Link defence and attack, control the game's tempo and possession",
+                    "Forwards/Strikers: Create and finish scoring opportunities"
+                ]
+            },
+            {
+                id: 2,
+                name: "Basketball",
+                type: "team",
+                icon: "🏀",
+                winning: [
+                    "Score more points than the opponent by shooting the ball through the elevated hoop",
+                    "Shoot from inside the three-point line (2 points) or beyond it (3 points)",
+                    "Control the ball through passing and dribbling to create high-percentage shots",
+                    "Play strong defence to force turnovers and limit opponent scoring",
+                    "Rebound effectively to gain second-chance opportunities"
+                ],
+                positions: [
+                    "Point Guard: Controls the ball, initiates plays, and runs the offence",
+                    "Shooting Guard: Primary scorer, handles the ball on the perimeter",
+                    "Small Forward: Versatile scorer and defender, plays multiple positions",
+                    "Power Forward: Scores inside, rebounds, and plays physical defence",
+                    "Centre: Dominates the paint, rebounds, and defends the basket"
+                ]
+            },
+            {
+                id: 3,
+                name: "Tennis",
+                type: "individual",
+                icon: "🎾",
+                winning: [
+                    "Win four points to win a game (0, 15, 30, 40, game) with a two-point margin",
+                    "Win six games to win a set, with a two-game lead (or win a tiebreaker at 6-6)",
+                    "Win two or three sets to win the match (depending on tournament format)",
+                    "Hit the ball over the net into the opponent's court so they can't return it",
+                    "Use placement, spin, and pace to force errors or weak returns"
+                ],
+                positions: [
+                    "Singles: One player per side",
+                    "Doubles: Two players per side (baseline and net positions)"
+                ]
+            },
+            {
+                id: 4,
+                name: "Baseball",
+                type: "team",
+                icon: "⚾",
+                winning: [
+                    "Score more runs than the opponent over nine innings",
+                    "Advance runners around the bases and cross home plate to score",
+                    "Get three outs per inning to end the opposing team's turn at bat",
+                    "Hit the pitched ball and run to bases before being tagged or thrown out",
+                    "Pitch strikes and prevent batters from hitting the ball effectively"
+                ],
+                positions: [
+                    "Pitcher: Throws the ball to batters, primary defender",
+                    "Catcher: Receives pitches, manages the game, throws out runners",
+                    "Infielders: First, second, third base and shortstop defend the infield",
+                    "Outfielders: Left, centre, right field defend the outfield",
+                    "Batter/Runner: Hits the ball and attempts to score runs"
+                ]
+            },
+            {
+                id: 5,
+                name: "Ice Hockey",
+                type: "team",
+                icon: "🏒",
+                winning: [
+                    "Score more goals than the opponent in three 20-minute periods",
+                    "Shoot the puck into the opponent's goal past the goaltender",
+                    "Control the puck through passing and skating to create scoring chances",
+                    "Defend your goal by blocking shots and checking opponents",
+                    "Win face-offs to gain possession and control the game's flow"
+                ],
+                positions: [
+                    "Goaltender: Protects the goal, stops incoming shots",
+                    "Defensemen: Prevent scoring chances, clear the puck from the defensive zone",
+                    "Forwards/Wingers: Create scoring opportunities, play offence and defence",
+                    "Centre: Controls the puck, takes face-offs, links defence and attack"
+                ]
+            },
+            {
+                id: 6,
+                name: "Rugby",
+                type: "team",
+                icon: "🏉",
+                winning: [
+                    "Score more points than the opponent in 80 minutes of play",
+                    "Place the ball down in the opponent's end zone (try) for 5 points",
+                    "Kick the ball between the goal posts for 2 or 3 points",
+                    "Tackle opponents to stop their advance and regain possession",
+                    "Maintain continuous play through rucks and mauls to move the ball forward"
+                ],
+                positions: [
+                    "Forwards: Props, hooker, locks, flankers, number 8 - provide power and set pieces",
+                    "Backs: Scrum-half, fly-half, centres, wingers, fullback - create attacking plays",
+                    "Hooker: Throws the ball in at lineouts",
+                    "Flankers: Mobile defenders and attackers on the sides"
+                ]
+            },
+            {
+                id: 7,
+                name: "American Football",
+                type: "team",
+                icon: "🏈",
+                winning: [
+                    "Score more points than the opponent in four 15-minute quarters",
+                    "Move the ball down the field to the opponent's end zone for a touchdown (6 points)",
+                    "Kick the ball through the uprights for field goals (3 points) or extra points (1-2)",
+                    "Gain 10 yards in four plays (downs) to earn a new set of downs",
+                    "Defend by tackling the ball carrier and preventing forward progress"
+                ],
+                positions: [
+                    "Offense: Quarterback (throws), running backs, wide receivers, offensive line",
+                    "Defense: Defensive line, linebackers, defensive backs, safeties",
+                    "Special Teams: Kicker, punter, long snapper"
+                ]
+            },
+            {
+                id: 8,
+                name: "Volleyball",
+                type: "team",
+                icon: "🏐",
+                winning: [
+                    "Score 25 points with a two-point lead to win a set",
+                    "Win three sets to win the match",
+                    "Hit the ball over the net so the opponent can't return it",
+                    "Use three touches per side (pass, set, spike) to control the ball",
+                    "Block incoming attacks at the net to prevent scoring"
+                ],
+                positions: [
+                    "Setters: Distribute the ball to attackers",
+                    "Outside Hitters: Primary attackers on the sides",
+                    "Middle Blockers: Block at the net, quick attackers",
+                    "Opposite Hitters: Attack from the right side, secondary setter",
+                    "Libero: Defensive specialist, passes and digs"
+                ]
+            },
+            {
+                id: 9,
+                name: "Cricket",
+                type: "team",
+                icon: "🏏",
+                winning: [
+                    "Score more runs than the opponent before all batters are dismissed",
+                    "Hit the ball bowled at you and run between wickets to score runs",
+                    "Get 10 batters out (dismissed) to end the opposing team's innings",
+                    "Bowl (pitch) the ball to get batters out through various methods",
+                    "Field strategically to prevent runs and create dismissal opportunities"
+                ],
+                positions: [
+                    "Batters: Hit the ball and score runs",
+                    "Bowlers: Pitch the ball to get batters out",
+                    "Fielders: Catch the ball, run out batters, prevent runs",
+                    "Wicket-keeper: Stands behind the batter, catches and stump batters"
+                ]
+            },
+            {
+                id: 10,
+                name: "Badminton",
+                type: "individual",
+                icon: "🏸",
+                winning: [
+                    "Score 21 points with a two-point lead to win a game",
+                    "Win two games to win the match",
+                    "Hit the shuttlecock over the net so it lands in the opponent's court",
+                    "Use placement and speed to force the opponent out of position",
+                    "Win the rally when the opponent fails to return the shuttlecock"
+                ],
+                positions: [
+                    "Singles: One player per side",
+                    "Doubles: Two players per side (front and back court positions)"
+                ]
+            },
+            {
+                id: 11,
+                name: "Table Tennis",
+                type: "individual",
+                icon: "🏓",
+                winning: [
+                    "Score 11 points with a two-point lead to win a game",
+                    "Win the best of three or five games to win the match",
+                    "Hit the ball over the net so the opponent can't return it",
+                    "Use spin, speed, and placement to create unforced errors",
+                    "Alternate serves every two points to keep the game fair"
+                ],
+                positions: [
+                    "Singles: One player per side",
+                    "Doubles: Two players per side"
+                ]
+            },
+            {
+                id: 12,
+                name: "Squash",
+                type: "individual",
+                icon: "🎾",
+                winning: [
+                    "Score 11 points with a two-point lead to win a game",
+                    "Win the best of three or five games to win the match",
+                    "Hit the ball against the front wall so the opponent can't return it",
+                    "Move the opponent around the court to tire them out",
+                    "Use the boast shot and angles to create winning opportunities"
+                ],
+                positions: [
+                    "Singles: One player per side",
+                    "Doubles: Two players per side"
+                ]
+            },
+            {
+                id: 13,
+                name: "Golf",
+                type: "individual",
+                icon: "⛳",
+                winning: [
+                    "Complete the course in the fewest number of strokes (shots)",
+                    "Hit the ball from the tee box toward the green and into the hole",
+                    "Use different clubs strategically based on distance and terrain",
+                    "Manage your score relative to par (the standard number of strokes)",
+                    "Avoid hazards like water, sand bunkers, and rough grass"
+                ],
+                positions: [
+                    "Individual sport (can be played in groups for scoring purposes)",
+                    "Match play: Head-to-head competition",
+                    "Stroke play: Total score over the round"
+                ]
+            },
+            {
+                id: 14,
+                name: "Netball",
+                type: "team",
+                icon: "🏀",
+                winning: [
+                    "Score more goals than the opponent in four 15-minute quarters",
+                    "Pass the ball to teammates and move into scoring positions",
+                    "Shoot the ball through the elevated goal ring from within the goal circle",
+                    "Defend by intercepting passes and preventing opponent movement",
+                    "Use footwork rules (no running with the ball) to maintain possession"
+                ],
+                positions: [
+                    "Goal Shooter: Primary scorer, shoots from the goal circle",
+                    "Goal Attack: Secondary scorer, supports the goal shooter",
+                    "Wing Attack: Feeds the ball to attackers, plays midcourt",
+                    "Centre: Controls the game, links defence and attack",
+                    "Wing Defence: Defends the wing attack, supports midcourt",
+                    "Goal Defence: Defends the goal attack, prevents scoring",
+                    "Goalkeeper: Defends the goal circle, prevents goals"
+                ]
+            },
+            {
+                id: 15,
+                name: "Lacrosse",
+                type: "team",
+                icon: "🏑",
+                winning: [
+                    "Score more goals than the opponent in four 15-minute quarters",
+                    "Shoot the ball into the opponent's goal using a lacrosse stick",
+                    "Use the stick to catch, carry, and pass the ball",
+                    "Check opponents to force turnovers and regain possession",
+                    "Win face-offs at the start of quarters and after goals"
+                ],
+                positions: [
+                    "Attack: Score goals, primary offensive players",
+                    "Midfield: Play both offence and defence, control the game",
+                    "Defence: Prevent scoring, check opponents, clear the ball",
+                    "Goaltender: Protect the goal, stop incoming shots"
+                ]
+            },
+            {
+                id: 16,
+                name: "Field Hockey",
+                type: "team",
+                icon: "🏑",
+                winning: [
+                    "Score more goals than the opponent in four 15-minute quarters",
+                    "Hit the ball with the hockey stick into the opponent's goal",
+                    "Control the ball through passing and dribbling",
+                    "Defend by intercepting passes and blocking shots",
+                    "Score from within the striking circle (goal area)"
+                ],
+                positions: [
+                    "Forwards: Attack and score goals",
+                    "Midfielders: Link defence and attack, control possession",
+                    "Defenders: Prevent scoring, clear the ball",
+                    "Goalkeeper: Protect the goal, stop shots"
+                ]
+            },
+            {
+                id: 17,
+                name: "Handball",
+                type: "team",
+                icon: "🤾",
+                winning: [
+                    "Score more goals than the opponent in two 30-minute halves",
+                    "Throw the ball into the opponent's goal from outside the goal area",
+                    "Pass and move the ball to create scoring opportunities",
+                    "Defend by blocking passes and preventing shots",
+                    "Use speed and teamwork to break down the defence"
+                ],
+                positions: [
+                    "Goalkeepers: Protect the goal, stop incoming shots",
+                    "Backs: Shoot from distance, primary scorers",
+                    "Wings: Attack from the sides, create space",
+                    "Pivot: Play in the goal area, create opportunities for teammates"
+                ]
+            },
+            {
+                id: 18,
+                name: "Australian Rules Football",
+                type: "team",
+                icon: "🏈",
+                winning: [
+                    "Score more points than the opponent in four 20-minute quarters",
+                    "Kick the ball between the goal posts for 6 points (goal)",
+                    "Kick the ball between the outer posts for 1 point (behind)",
+                    "Mark the ball (catch it in the air) to gain possession",
+                    "Handball (punch) the ball to teammates when tackled"
+                ],
+                positions: [
+                    "Forwards: Score goals, play attacking positions",
+                    "Midfielders: Control the game, link defence and attack",
+                    "Defenders: Prevent scoring, mark opponents",
+                    "Ruckman: Contest the ball in the air, win possessions"
+                ]
+            },
+            {
+                id: 19,
+                name: "Boxing",
+                type: "individual",
+                icon: "🥊",
+                winning: [
+                    "Knock out your opponent (they can't continue fighting)",
+                    "Win on points by landing more effective punches than your opponent",
+                    "Win by technical knockout if the opponent is too injured to continue",
+                    "Score points by landing clean punches to the head and body",
+                    "Defend effectively to avoid taking damage and losing points"
+                ],
+                positions: [
+                    "Individual sport (one-on-one combat)",
+                    "Weight classes determine matchups"
+                ]
+            },
+            {
+                id: 20,
+                name: "Wrestling",
+                type: "individual",
+                icon: "🤼",
+                winning: [
+                    "Pin your opponent (hold both shoulders to the mat for a count)",
+                    "Win by points through takedowns, escapes, and near-falls",
+                    "Win by technical fall (lead of 15+ points)",
+                    "Win by major decision (lead of 8-14 points)",
+                    "Control your opponent on the mat to score points"
+                ],
+                positions: [
+                    "Individual sport (one-on-one grappling)",
+                    "Weight classes determine matchups"
+                ]
+            },
+            {
+                id: 21,
+                name: "Judo",
+                type: "individual",
+                icon: "🥋",
+                winning: [
+                    "Win by ippon (throw opponent to their back with force and control)",
+                    "Win by pinning the opponent for 20+ seconds",
+                    "Win by armbar or choke submission",
+                    "Win by points if no ippon is scored",
+                    "Use leverage and technique to control your opponent"
+                ],
+                positions: [
+                    "Individual sport (one-on-one grappling)",
+                    "Weight classes determine matchups"
+                ]
+            },
+            {
+                id: 22,
+                name: "Karate",
+                type: "individual",
+                icon: "🥋",
+                winning: [
+                    "Score more points than your opponent in a kumite (sparring) match",
+                    "Score points by landing controlled strikes to the head and body",
+                    "Win by knockout if the opponent cannot continue",
+                    "Win by points at the end of the match",
+                    "Use speed, accuracy, and control to score effectively"
+                ],
+                positions: [
+                    "Individual sport (one-on-one sparring)",
+                    "Kata (forms) competition is also individual"
+                ]
+            },
+            {
+                id: 23,
+                name: "Taekwondo",
+                type: "individual",
+                icon: "🥋",
+                winning: [
+                    "Score more points than your opponent in a sparring match",
+                    "Score points by landing kicks and punches to the head and body",
+                    "Head kicks are worth more points than body kicks",
+                    "Win by knockout if the opponent cannot continue",
+                    "Use footwork and timing to land effective strikes"
+                ],
+                positions: [
+                    "Individual sport (one-on-one sparring)",
+                    "Weight classes determine matchups"
+                ]
+            },
+            {
+                id: 24,
+                name: "Fencing",
+                type: "individual",
+                icon: "🤺",
+                winning: [
+                    "Score 15 touches on your opponent before they score 15 on you",
+                    "Score a touch by hitting your opponent with the weapon (foil, épée, or sabre)",
+                    "Use the right-of-way rule (first to attack gets priority)",
+                    "Advance and retreat strategically to create scoring opportunities",
+                    "Defend by parrying and riposting to counter-attack"
+                ],
+                positions: [
+                    "Individual sport (one-on-one combat)",
+                    "Three disciplines: Foil, Épée, Sabre"
+                ]
+            },
+            {
+                id: 25,
+                name: "Archery",
+                type: "individual",
+                icon: "🏹",
+                winning: [
+                    "Score the most points by hitting the target with arrows",
+                    "Arrows closer to the centre of the target score more points",
+                    "Shoot a set number of arrows (typically 30 or 72) at a stationary target",
+                    "Maintain consistent form and accuracy across all shots",
+                    "Win by highest total score after all arrows are shot"
+                ],
+                positions: [
+                    "Individual sport (can compete in teams for combined scores)",
+                    "Target archery, field archery, and 3D archery are different formats"
+                ]
+            },
+            {
+                id: 26,
+                name: "Curling",
+                type: "team",
+                icon: "🥌",
+                winning: [
+                    "Score more points than the opponent after 10 ends (rounds)",
+                    "Slide stones down the ice toward the target (house)",
+                    "Score points for each stone closer to the centre than the opponent's stones",
+                    "Use sweeping to control the stone's speed and direction",
+                    "Strategy and precision are more important than power"
+                ],
+                positions: [
+                    "Lead: Throws the first two stones",
+                    "Second: Throws the third and fourth stones",
+                    "Third: Throws the fifth and sixth stones",
+                    "Skip: Throws the last two stones, calls the strategy"
+                ]
+            },
+            {
+                id: 27,
+                name: "Bowling",
+                type: "individual",
+                icon: "🎳",
+                winning: [
+                    "Score the most points by knocking down pins",
+                    "Knock down all 10 pins in two rolls to score a spare (10 points)",
+                    "Knock down all 10 pins in one roll to score a strike (10+ points)",
+                    "Aim for consistent accuracy and power",
+                    "Win by highest total score after 10 frames"
+                ],
+                positions: [
+                    "Individual sport (can compete in teams)",
+                    "Bowlers take turns rolling the ball"
+                ]
+            },
+            {
+                id: 28,
+                name: "Pool (Billiards)",
+                type: "individual",
+                icon: "🎱",
+                winning: [
+                    "Sink all your assigned balls (solids or stripes) then sink the 8-ball",
+                    "Use the cue stick to hit the cue ball into your designated balls",
+                    "Sink balls by hitting them into the pockets",
+                    "Control the cue ball's position for the next shot",
+                    "Prevent your opponent from sinking their balls"
+                ],
+                positions: [
+                    "Individual sport (one-on-one or team play)",
+                    "Solids vs. Stripes (or other variations)"
+                ]
+            },
+            {
+                id: 29,
+                name: "Snooker",
+                type: "individual",
+                icon: "🎱",
+                winning: [
+                    "Score more points than your opponent by potting (sinking) balls",
+                    "Pot the red balls first, then the coloured balls in sequence",
+                    "Score points based on the value of each ball potted",
+                    "Control the cue ball to set up the next shot",
+                    "Win by highest score after all balls are potted or opponent fouls"
+                ],
+                positions: [
+                    "Individual sport (one-on-one play)"
+                ]
+            },
+            {
+                id: 30,
+                name: "Darts",
+                type: "individual",
+                icon: "🎯",
+                winning: [
+                    "Reduce your score from 501 to exactly zero",
+                    "Land darts in high-scoring areas of the board",
+                    "The final dart must land in a double (outer ring)",
+                    "Maintain accuracy and consistency across all throws",
+                    "Win by reaching zero first"
+                ],
+                positions: [
+                    "Individual sport (can compete in teams)",
+                    "Various game formats (501, Cricket, Around the Clock)"
+                ]
+            },
+            {
+                id: 31,
+                name: "Skateboarding",
+                type: "individual",
+                icon: "🛹",
+                winning: [
+                    "Land tricks and combinations successfully",
+                    "Score points based on difficulty, execution, and style",
+                    "Maintain balance and control throughout the run",
+                    "Progress from basic tricks to advanced maneuvers",
+                    "Win by highest score in competition or by landing the most difficult tricks"
+                ],
+                positions: [
+                    "Individual sport (can compete in teams for combined scores)",
+                    "Street, park, and vert are different disciplines"
+                ]
+            },
+            {
+                id: 32,
+                name: "Surfing",
+                type: "individual",
+                icon: "🏄",
+                winning: [
+                    "Catch and ride waves successfully",
+                    "Score points based on wave difficulty, maneuvers, and style",
+                    "Execute turns, aerials, and other tricks on the wave",
+                    "Maintain balance and control throughout the ride",
+                    "Win by highest score after a set time period"
+                ],
+                positions: [
+                    "Individual sport (can compete in teams)",
+                    "Respect for other surfers and wave etiquette is important"
+                ]
+            },
+            {
+                id: 33,
+                name: "Rock Climbing",
+                type: "individual",
+                icon: "🧗",
+                winning: [
+                    "Reach the top of the climbing route (summit)",
+                    "Complete the route in the fastest time (speed climbing)",
+                    "Score points based on the number of holds reached (bouldering)",
+                    "Use proper technique and footwork to conserve energy",
+                    "Win by reaching the highest point or fastest time"
+                ],
+                positions: [
+                    "Individual sport (can compete in teams)",
+                    "Three disciplines: Lead climbing, bouldering, speed climbing"
+                ]
+            },
+            {
+                id: 34,
+                name: "Gymnastics",
+                type: "individual",
+                icon: "🤸",
+                winning: [
+                    "Score the highest points based on difficulty and execution",
+                    "Perform routines with proper form, balance, and control",
+                    "Execute flips, twists, and other acrobatic movements",
+                    "Minimize deductions for falls or form breaks",
+                    "Win by highest combined score across all apparatus"
+                ],
+                positions: [
+                    "Individual sport (can compete in teams)",
+                    "Apparatus: Floor, vault, balance beam, uneven bars, pommel horse, rings, parallel bars, high bar"
+                ]
+            },
+            {
+                id: 35,
+                name: "Swimming",
+                type: "individual",
+                icon: "🏊",
+                winning: [
+                    "Complete the race distance in the fastest time",
+                    "Use proper stroke technique (freestyle, backstroke, breaststroke, butterfly)",
+                    "Maintain consistent pace and power throughout the race",
+                    "Execute efficient turns and finishes",
+                    "Win by touching the wall first"
+                ],
+                positions: [
+                    "Individual sport (can compete in relay teams)",
+                    "Different strokes and distances determine race types"
+                ]
+            },
+            {
+                id: 36,
+                name: "Track and Field",
+                type: "individual",
+                icon: "🏃",
+                winning: [
+                    "Running events: Cross the finish line first",
+                    "Jumping events: Jump the farthest distance",
+                    "Throwing events: Throw the implement the farthest distance",
+                    "Use proper technique and explosive power",
+                    "Win by fastest time, farthest distance, or highest points"
+                ],
+                positions: [
+                    "Individual sport (can compete in relay teams)",
+                    "Events: Sprints, distance, hurdles, jumps, throws"
+                ]
+            },
+            {
+                id: 37,
+                name: "Cycling",
+                type: "individual",
+                icon: "🚴",
+                winning: [
+                    "Cross the finish line first in a race",
+                    "Maintain speed and power throughout the race",
+                    "Use strategy and positioning to gain advantage",
+                    "Manage energy and pace effectively",
+                    "Win by fastest time or first to cross the finish line"
+                ],
+                positions: [
+                    "Individual sport (can compete in teams)",
+                    "Disciplines: Road racing, track cycling, mountain biking, BMX"
+                ]
+            },
+            {
+                id: 38,
+                name: "Equestrian",
+                type: "individual",
+                icon: "🏇",
+                winning: [
+                    "Complete the course with the fewest faults",
+                    "Jump over obstacles without knocking them down",
+                    "Maintain proper form and control of the horse",
+                    "Complete the course within the time limit",
+                    "Win by lowest fault score or fastest time"
+                ],
+                positions: [
+                    "Individual sport (can compete in teams)",
+                    "Disciplines: Dressage, show jumping, eventing"
+                ]
+            },
+            {
+                id: 39,
+                name: "Rowing",
+                type: "team",
+                icon: "🚣",
+                winning: [
+                    "Cross the finish line first in a race",
+                    "Maintain synchronized rowing technique with teammates",
+                    "Use power and endurance to propel the boat forward",
+                    "Manage pace and energy throughout the race",
+                    "Win by fastest time or first to cross the finish line"
+                ],
+                positions: [
+                    "Sweep Rowing: Each rower holds one oar (2, 4, or 8 person boats)",
+                    "Sculling: Each rower holds two oars (1, 2, or 4 person boats)",
+                    "Coxswain: Steers the boat and calls the pace (in some boats)"
+                ]
+            },
+            {
+                id: 40,
+                name: "Basketball 3x3",
+                type: "team",
+                icon: "🏀",
+                winning: [
+                    "Score 21 points before the opponent",
+                    "If time runs out (10 minutes), the team with the most points wins",
+                    "Score 2 points for baskets inside the three-point line",
+                    "Score 3 points for baskets beyond the three-point line",
+                    "Use fast-paced, high-intensity play on a half court"
+                ],
+                positions: [
+                    "Guard: Controls the ball, initiates plays",
+                    "Forward: Versatile scorer and defender",
+                    "Centre: Scores inside, rebounds"
+                ]
+            },
+            {
+                id: 41,
+                name: "Pickleball",
+                type: "individual",
+                icon: "🏓",
+                winning: [
+                    "Score 11 points with a two-point lead to win a game",
+                    "Win two games to win the match",
+                    "Hit the ball over the net so the opponent can't return it",
+                    "Use dinking (soft shots) to control the net",
+                    "Attack high balls to finish points"
+                ],
+                positions: [
+                    "Singles: One player per side",
+                    "Doubles: Two players per side (baseline and net positions)"
+                ]
+            },
+            {
+                id: 42,
+                name: "Hurling",
+                type: "team",
+                icon: "🏑",
+                winning: [
+                    "Score more points than the opponent in 70 minutes",
+                    "Hit the ball between the goal posts for 3 points (goal)",
+                    "Hit the ball over the crossbar for 1 point (point)",
+                    "Use the wooden stick (hurley) to catch and carry the ball",
+                    "Defend by blocking shots and intercepting passes"
+                ],
+                positions: [
+                    "Forwards: Score goals and points",
+                    "Midfielders: Control the game, link defence and attack",
+                    "Defenders: Prevent scoring, clear the ball",
+                    "Goalkeeper: Protect the goal"
+                ]
+            },
+            {
+                id: 43,
+                name: "Gaelic Football",
+                type: "team",
+                icon: "🏈",
+                winning: [
+                    "Score more points than the opponent in 70 minutes",
+                    "Kick or punch the ball between the goal posts for 3 points (goal)",
+                    "Kick or punch the ball over the crossbar for 1 point (point)",
+                    "Catch the ball in the air and carry it for up to four steps",
+                    "Defend by tackling and intercepting passes"
+                ],
+                positions: [
+                    "Forwards: Score goals and points",
+                    "Midfielders: Control the game, link defence and attack",
+                    "Defenders: Prevent scoring, clear the ball",
+                    "Goalkeeper: Protect the goal"
+                ]
+            },
+            {
+                id: 44,
+                name: "Ultimate Frisbee",
+                type: "team",
+                icon: "🥏",
+                winning: [
+                    "Score more points than the opponent by catching the frisbee in the end zone",
+                    "Pass the frisbee to teammates to advance down the field",
+                    "Catch the frisbee in the opponent's end zone to score a point",
+                    "Defend by intercepting passes and forcing turnovers",
+                    "Win by highest score at the end of the game"
+                ],
+                positions: [
+                    "Handlers: Control the frisbee, initiate plays",
+                    "Cutters: Receive passes, score points",
+                    "Deep Defenders: Defend long passes"
+                ]
+            },
+            {
+                id: 45,
+                name: "Muay Thai",
+                type: "individual",
+                icon: "🥊",
+                winning: [
+                    "Knock out your opponent or win on points",
+                    "Land effective strikes using fists, elbows, knees, and shins",
+                    "Control the clinch to land knee strikes",
+                    "Score points by landing clean, powerful strikes",
+                    "Defend effectively to minimize damage"
+                ],
+                positions: [
+                    "Individual sport (one-on-one combat)",
+                    "Weight classes determine matchups"
+                ]
+            },
+            {
+                id: 46,
+                name: "MMA (Mixed Martial Arts)",
+                type: "individual",
+                icon: "🥊",
+                winning: [
+                    "Knock out or submit your opponent",
+                    "Win by points using striking and grappling techniques",
+                    "Control your opponent on the ground or standing",
+                    "Land effective strikes and takedowns",
+                    "Defend against all forms of attack"
+                ],
+                positions: [
+                    "Individual sport (one-on-one combat)",
+                    "Weight classes determine matchups"
+                ]
+            },
+            {
+                id: 47,
+                name: "Weightlifting",
+                type: "individual",
+                icon: "🏋️",
+                winning: [
+                    "Lift the heaviest weight successfully",
+                    "Complete the lift with proper form and control",
+                    "Win by highest total weight in snatch and clean & jerk",
+                    "Maintain balance and stability throughout the lift",
+                    "Avoid dropping the weight or failing the lift"
+                ],
+                positions: [
+                    "Individual sport (can compete in teams)",
+                    "Two disciplines: Snatch and Clean & Jerk"
+                ]
+            },
+            {
+                id: 48,
+                name: "Powerlifting",
+                type: "individual",
+                icon: "🏋️",
+                winning: [
+                    "Lift the heaviest weight successfully",
+                    "Complete all three lifts: squat, bench press, deadlift",
+                    "Win by highest total weight across all three lifts",
+                    "Maintain proper form throughout each lift",
+                    "Avoid failed attempts or disqualifications"
+                ],
+                positions: [
+                    "Individual sport (can compete in teams)",
+                    "Three disciplines: Squat, Bench Press, Deadlift"
+                ]
+            },
+            {
+                id: 49,
+                name: "Cross Country Running",
+                type: "individual",
+                icon: "🏃",
+                winning: [
+                    "Cross the finish line first",
+                    "Maintain consistent pace throughout the race",
+                    "Use strategy to position yourself for the final sprint",
+                    "Manage energy and breathing effectively",
+                    "Win by fastest time or first to cross the finish line"
+                ],
+                positions: [
+                    "Individual sport (can compete in teams)",
+                    "Races typically 5-10 kilometers on natural terrain"
+                ]
+            },
+            {
+                id: 50,
+                name: "Triathlon",
+                type: "individual",
+                icon: "🏊",
+                winning: [
+                    "Complete swimming, cycling, and running segments fastest",
+                    "Transition efficiently between each sport",
+                    "Manage energy across all three disciplines",
+                    "Maintain pace and power throughout the race",
+                    "Win by fastest total time"
+                ],
+                positions: [
+                    "Individual sport (can compete in teams)",
+                    "Distances vary: Sprint, Olympic, Half Ironman, Ironman"
+                ]
+            }
+        ];
+
+        let currentFilter = 'all';
+        let currentSearch = '';
+
+        function renderSports(sports = sportsData) {
+            const grid = document.getElementById('sportsGrid');
+            grid.innerHTML = '';
+
+            const filtered = sports.filter(sport => {
+                const matchesFilter = currentFilter === 'all' || sport.type === currentFilter;
+                const matchesSearch = sport.name.toLowerCase().includes(currentSearch.toLowerCase());
+                return matchesFilter && matchesSearch;
+            });
+
+            filtered.forEach(sport => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-xl shadow-md card-hover border-2 border-gray-100 overflow-hidden cursor-pointer';
+                card.onclick = () => openSportModal(sport);
+                
+                card.innerHTML = `
+                    <div class="p-6">
+                        <div class="sport-icon ${sport.type === 'team' ? 'bg-blue-100' : 'bg-purple-100'} mb-4">
+                            ${sport.icon}
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">${sport.name}</h3>
+                        <p class="text-sm text-gray-600 mb-4 capitalize">${sport.type} Sport</p>
+                        <div class="flex items-center gap-2 text-teal-600 font-medium">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '<div class="col-span-full text-center py-12"><p class="text-gray-500 text-lg">No sports found. Try a different search.</p></div>';
+            }
+        }
+
+        function filterSports(type) {
+            currentFilter = type;
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.style.opacity = btn.dataset.filter === type ? '1' : '0.6';
+            });
+            renderSports();
+        }
+
+        function openSportModal(sport) {
+            document.getElementById('modalTitle').textContent = sport.name;
+            document.getElementById('modalType').textContent = `${sport.type.charAt(0).toUpperCase() + sport.type.slice(1)} Sport`;
+            
+            const winningList = document.getElementById('modalWinning');
+            winningList.innerHTML = sport.winning.map(item => 
+                `<li class="flex gap-3"><i class="fas fa-check text-teal-600 mt-1 flex-shrink-0"></i><span>${item}</span></li>`
+            ).join('');
+            
+            const positionsList = document.getElementById('modalPositions');
+            positionsList.innerHTML = sport.positions.map(item => 
+                `<li class="flex gap-3"><i class="fas fa-star text-orange-600 mt-1 flex-shrink-0"></i><span>${item}</span></li>`
+            ).join('');
+            
+            document.getElementById('sportModal').classList.add('active');
+        }
+
+        function closeSportModal() {
+            document.getElementById('sportModal').classList.remove('active');
+        }
+
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            currentSearch = e.target.value;
+            renderSports();
+        });
+
+        document.getElementById('sportModal').addEventListener('click', (e) => {
+            if (e.target.id === 'sportModal') {
+                closeSportModal();
+            }
+        });
+
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            alert('Mobile menu would expand here');
+        });
+
+        renderSports();
+    </script>
+</body>
+</html>
